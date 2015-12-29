@@ -472,6 +472,11 @@ footer {
     padding: 50px 0 30px;
 }
 
+.copyright {
+    border-top: 1px solid #ccc;
+    margin-top: 50px;
+}
+
 .copyright h4 {
     font-family: 'Pacifico', cursive;
     color: #ae1016;
