@@ -1,0 +1,564 @@
+/*------------------------------------------/
+/-----------------Header--------------------/
+/------------------------------------------*/
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: "Source Sans Pro", sans-serif;;
+}
+
+a {
+    color: #e14349;
+}
+
+a:hover {
+    color: #950000;
+}
+
+.btn-primary,
+.btn-primary:active,
+.btn-primary:focus {
+    background: #ae1016;
+    border: 1px solid #ae1016;
+}
+
+.btn-primary:hover {
+    background: #950000;
+    border: 1px solid #ae1016;
+}
+
+img {
+    width: 100%;
+}
+
+input[type=text]:focus, textarea:focus {
+  box-shadow: 0 0 5px #ae1016;
+  border: 1px solid #ae1016;
+}
+
+.banner,
+.background {
+	background-attachment: scroll;
+	background-image: url('images/background-banner.jpg');
+    background-position: 50% 0;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+}
+
+.background-container {
+	background: -moz-linear-gradient(top, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.5) 30%, rgba(0,0,0,0.8) 80%, rgba(0,0,0,0.9) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0,0,0,0.2)), color-stop(30%, rgba(0,0,0,0.5)), color-stop(80%, rgba(0,0,0,0.8)), color-stop(100%, rgba(0,0,0,0.9)));
+	background: -webkit-linear-gradient(top, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0.5) 30%, rgba(0,0,0,0.8) 80%,rgba(0,0,0,0.9) 100%);
+	background: -o-linear-gradient(top, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.5) 30%, rgba(0,0,0,0.8) 80%, rgba(0,0,0,0.9) 100%);
+	background: -ms-linear-gradient(top, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0.5) 30%, rgba(0,0,0,0.8) 80%, rgba(0,0,0,0.9) 100%);
+	background: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0.5) 30%, rgba(0,0,0,0.8) 80%, rgba(0,0,0,0.9) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#33000000', endColorstr='#e6000000',GradientType=0);
+	display: table;
+	overflow: hidden;
+	table-layout: fixed;
+	width: 100%;
+}
+
+.background-container.dark {
+	background: -moz-linear-gradient(top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.7) 30%, rgba(0,0,0,0.8) 80%, rgba(0,0,0,0.9) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0,0,0,0.6)), color-stop(30%, rgba(0,0,0,0.7)), color-stop(80%, rgba(0,0,0,0.8)), color-stop(100%, rgba(0,0,0,0.9)));
+	background: -webkit-linear-gradient(top, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.7) 30%, rgba(0,0,0,0.8) 80%,rgba(0,0,0,0.9) 100%);
+	background: -o-linear-gradient(top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.7) 30%, rgba(0,0,0,0.8) 80%, rgba(0,0,0,0.9) 100%);
+	background: -ms-linear-gradient(top, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.7) 30%, rgba(0,0,0,0.8) 80%, rgba(0,0,0,0.9) 100%);
+	background: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.7) 30%, rgba(0,0,0,0.8) 80%, rgba(0,0,0,0.9) 100%);
+	color: #fff;
+	padding: 100px 0;
+}
+
+.dark h3 {
+	color: #fff;
+}
+
+.dark p {
+	color: #ddd;
+}
+
+.banner-text {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.arrow {
+    text-align: center;
+    font-size: 60px;
+    color: #7b0000;
+    display: inline-block;
+    margin: 30px -2px 0 0;
+}
+
+.arrow:hover, .arrow:focus {
+    text-align: center;
+    font-size: 60px;
+    color: #480000;
+    display: inline-block;
+    margin: 30px -2px 0 0;
+}
+
+#heads:before, #heads:after {
+    background: rgba(224, 224, 224, 0.75);
+    content: '';
+    left: 50%;
+    position: absolute;
+    width: 1px;
+    z-index: 0;
+}
+
+#heads::before {
+    height: calc(100%);
+    opacity: 0.15;
+    top: 0;
+}
+
+.line:before {
+    background: rgba(224, 224, 224, 0.75);
+    content: '';
+    position: absolute;
+    width: 100%;
+    z-index: 0;
+    padding-left: 0;
+}
+
+.line::before {
+    height: 1px;
+    opacity: 0.15;
+    top: 32px;
+    left: 0;
+}
+
+#menu:before {
+    background: rgba(224, 224, 224, 0.75);
+    content: '';
+    position: absolute;
+    width: 100%;
+    z-index: 0;
+}
+
+#menu::before {
+    height: 1px;
+    opacity: 0.15;
+    bottom: 100px;
+}
+
+.tablebox {
+    display: table;
+    width: 100%;
+}
+
+.hostyle {
+    font-family: 'Pacifico', cursive;
+    color: #ae1016;
+    font-size: 60px;
+}
+
+.pstyle {
+    font-family: 'Raleway', sans-serif;
+    color: #fff;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 24px;
+    letter-spacing: 2px;
+    padding: 0;
+}
+
+.banner-text h2 {
+    color: #fff;
+    font-size: 40px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+}
+
+.spanstyle {
+    color: #dd068f;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+}
+
+.spanstyle2 {
+    color: #000;
+}
+
+.typed-cursor {
+    opacity: 1;
+    -webkit-animation: blink 0.7s infinite;
+    -moz-animation: blink 0.7s infinite;
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.menubar {
+    margin-bottom: 0;
+    background-color: #ae1016;
+    border: none;
+    border-radius: 0;
+    z-index: 2;
+}
+
+.logo,
+.logo:active,
+.logo:focus,
+.logo:hover {
+    padding: 24px 15px;
+    display: inline-block;
+    height: auto;
+    font-family: 'Pacifico', cursive;
+    color: #fff;
+    font-size: 34px;
+}
+
+.navstyle li a {
+    padding: 24px 15px;
+    color: #fff;
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.navstyle li a:focus,
+.navstyle li a.active {
+    background-color: #e14349;
+    color: #fff;
+}
+
+.navstyle li a:hover {
+	background-color: #fff;
+	color: #e14349;
+}
+
+.navstyle li.blank {
+	background: #950000;
+	border-left: 1px solid #fff;
+}
+
+.navstyle li.blank:hover {
+	cursor: pointer;
+}
+
+.navstyle li.modal {
+    background: #950000;
+}
+
+.navbar-right {
+    float: right;
+    margin-right: 0;
+}
+
+/*------------------------------------------/
+/-----------------Ministry----------------/
+/------------------------------------------*/
+.ministry {
+    padding: 100px 0;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+/*------------------------------------------/
+/-----------------Vision---------------------/
+/------------------------------------------*/
+.vision {
+    background-attachment: fixed;
+    background-color: #fff;
+    background-position: 50% 0;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+
+	background-image: url('images/background-nature.jpg');
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+    color: #fff;
+}
+
+/*------------------------------------------/
+/-----------------Directions----------------/
+/------------------------------------------*/
+.directions {
+    padding: 100px 0 0;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.featurebox {
+    margin-top: 60px;
+}
+
+h3 {
+    margin: 0;
+    font-family: 'Raleway', sans-serif;
+    font-size: 22px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #242424;
+}
+
+p {
+    color: #888;
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+
+.all-td {
+    font-family: 'Raleway', sans-serif;
+    font-size: 22px;
+    font-weight: 300;
+    color: #242424;
+    text-transform: uppercase;
+    margin: 0;
+    letter-spacing: 2px;
+}
+
+h2 {
+    color: #c82a30;
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 40px;
+    margin-top: 0;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.desc {
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 18px;
+}
+
+/*------------------------------------------/
+/-----------------Note----------------------/
+/------------------------------------------*/
+.notes {
+    background-color: #45aacb;
+    padding: 100px 0;
+}
+
+.notes p {
+    color: #fff;
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    margin: 0;
+}
+
+.notes button {
+    display: inline-block;
+    border: medium none;
+    background-color: #ae1016;
+    padding: 12px 38px;
+    color: #fff;
+    border-radius: 4px;
+    font-size: 20px;
+}
+
+/*------------------------------------------/
+/-----------------Testimonial---------------/
+/------------------------------------------*/
+.testimonials {
+    padding: 100px 0;
+}
+
+.quotes {
+    margin-top: 60px;
+    font-family: "Source Sans Pro", sans-serif;
+    color: #888;
+}
+
+.quotes blockquote {
+    margin-bottom: 0;
+}
+
+.name {
+    text-align: right;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 15px;
+    color: #242424;
+}
+
+/*------------------------------------------/
+/-----------------Subscribe------------------/
+/------------------------------------------*/
+.subscribe-social {
+    background-color: #cb5750;
+    padding: 20px 0 5px;
+}
+
+.social {
+    list-style: none;
+    display: inline-block;
+}
+
+.social li {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.social li a {
+    font-size: 36px;
+    line-height: 0;
+}
+
+footer {
+    padding: 60px 0 0;
+    background-color: rgba(0, 0, 0, 0.1)
+}
+
+.info p {
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #888;
+}
+
+.info p i {
+	text-align: center;
+	width: 16px;
+}
+
+.btn-or {
+    background-color: #fff;
+    border: 1px solid #fff;
+    color: #cb5750;
+}
+
+/*------------------------------------------/
+/-----------------Footer--------------------/
+/------------------------------------------*/
+.foot {
+    padding: 50px 0 30px;
+}
+
+.copyright h4 {
+    font-family: 'Pacifico', cursive;
+    color: #ae1016;
+    font-size: 30px;
+    text-align: center;
+}
+
+.copyright p {
+    color: #888;
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 12px;
+    padding: 20px 0;
+    text-transform: uppercase;
+}
+
+/*------------------------------------------/
+/-----------------Modal---------------------/
+/------------------------------------------*/
+.modal h4 {
+    color: #cb5750;
+    font-size: 22px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.modal label {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+    color: #242424;
+    text-transform: uppercase;
+    margin: 0;
+    letter-spacing: 2px;
+}
+
+@media (min-width: 200px) and (max-width: 767px) {
+    .navstyle {
+        width: 100%;
+    }
+
+    .navstyle li a {
+        padding: 10px 15px;
+        text-align: center;
+        display: block;
+    }
+
+    .notes button {
+        margin-top: 20px;
+    }
+
+    .centertext {
+        text-align: center;
+    }
+
+    .btn-or {
+        margin-top: 20px;
+        display: inline-block;
+    }
+
+    .social {
+        margin-top: 10px;
+    }
+
+    .menu-button {
+        padding: 8px 10px;
+        margin-top: 9px;
+        font-size: 30px;
+        color: #fff;
+    }
+
+    figure.effect-Beauty h2 {
+        margin-top: 15%;
+        font-size: 16px;
+    }
+
+    figure.effect-Beauty p {
+        padding: 6px;
+        display: none;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 990px) {
+    .social {
+        margin-top: 10px;
+    }
+
+    .notes button {
+        padding: 14px 19px;
+        font-size: 13px;
+    }
+}
