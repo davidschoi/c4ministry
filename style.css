@@ -14,17 +14,19 @@ a {
     color: #e14349;
 }
 
+a:active,
+a:focus,
 a:hover {
     color: #950000;
 }
 
-.btn-primary,
-.btn-primary:active,
-.btn-primary:focus {
+.btn-primary {
     background: #ae1016;
     border: 1px solid #ae1016;
 }
 
+.btn-primary:active,
+.btn-primary:focus,
 .btn-primary:hover {
     background: #950000;
     border: 1px solid #ae1016;
@@ -288,39 +290,6 @@ input[type=text]:focus, textarea:focus {
     margin-right: 0;
 }
 
-/*------------------------------------------/
-/-----------------Ministry----------------/
-/------------------------------------------*/
-.ministry {
-    padding: 100px 0;
-    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
-}
-
-/*------------------------------------------/
-/-----------------Vision---------------------/
-/------------------------------------------*/
-.vision {
-    background-attachment: fixed;
-    background-color: #fff;
-    background-position: 50% 0;
-    background-repeat: no-repeat;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-
-	background-image: url('images/background-nature.jpg');
-    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
-    color: #fff;
-}
-
-/*------------------------------------------/
-/-----------------Directions----------------/
-/------------------------------------------*/
-.directions {
-    padding: 100px 0 0;
-    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
-}
-
 .featurebox {
     margin-top: 60px;
 }
@@ -368,108 +337,53 @@ h2 {
     font-size: 18px;
 }
 
-/*------------------------------------------/
-/-----------------Note----------------------/
-/------------------------------------------*/
-.notes {
-    background-color: #45aacb;
+section {
     padding: 100px 0;
 }
 
-.notes p {
-    color: #fff;
-    font-family: "Source Sans Pro", sans-serif;
-    font-weight: 400;
-    font-size: 18px;
-    margin: 0;
-}
-
-.notes button {
-    display: inline-block;
-    border: medium none;
-    background-color: #ae1016;
-    padding: 12px 38px;
-    color: #fff;
-    border-radius: 4px;
-    font-size: 20px;
-}
-
 /*------------------------------------------/
-/-----------------Testimonial---------------/
+/-----------------Vision--------------------/
 /------------------------------------------*/
-.testimonials {
-    padding: 100px 0;
-}
-
-.quotes {
-    margin-top: 60px;
-    font-family: "Source Sans Pro", sans-serif;
-    color: #888;
-}
-
-.quotes blockquote {
-    margin-bottom: 0;
-}
-
-.name {
-    text-align: right;
-    font-style: italic;
-    font-weight: 400;
-    font-size: 15px;
-    color: #242424;
-}
-
-/*------------------------------------------/
-/-----------------Subscribe------------------/
-/------------------------------------------*/
-.subscribe-social {
-    background-color: #cb5750;
-    padding: 20px 0 5px;
-}
-
-.social {
-    list-style: none;
-    display: inline-block;
-}
-
-.social li {
-    display: inline-block;
-    margin: 0 5px;
-}
-
-.social li a {
-    font-size: 36px;
-    line-height: 0;
-}
-
-footer {
-    padding: 60px 0 0;
-    background-color: rgba(0, 0, 0, 0.1)
-}
-
-.info p {
-    font-family: "Source Sans Pro", sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    color: #888;
-}
-
-.info p i {
-	text-align: center;
-	width: 16px;
-}
-
-.btn-or {
+.vision {
+    background-attachment: fixed;
     background-color: #fff;
-    border: 1px solid #fff;
-    color: #cb5750;
+    background-position: 50% 0;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+	background-image: url('images/background-nature.jpg');
+    color: #fff;
+    padding: 0;
 }
 
 /*------------------------------------------/
 /-----------------Footer--------------------/
 /------------------------------------------*/
-.foot {
-    padding: 50px 0 30px;
+footer {
+    background: #eee;
+    padding: 50px 0 0;
+}
+footer a {
+    color: #555;
+}
+
+footer a:active,
+footer a:focus,
+footer a:hover {
+    color: #222;
+}
+
+footer .btn-primary {
+    background: #555;
+    border-color: #555;
+}
+
+footer .btn-primary:active,
+footer .btn-primary:focus,
+footer .btn-primary:hover {
+    background: #222;
+    border-color: #222;
 }
 
 .copyright {
@@ -485,7 +399,7 @@ footer {
 }
 
 .copyright p {
-    color: #888;
+    color: #999;
     font-family: "Source Sans Pro", sans-serif;
     font-size: 12px;
     padding: 20px 0;
@@ -522,48 +436,10 @@ footer {
         display: block;
     }
 
-    .notes button {
-        margin-top: 20px;
-    }
-
-    .centertext {
-        text-align: center;
-    }
-
-    .btn-or {
-        margin-top: 20px;
-        display: inline-block;
-    }
-
-    .social {
-        margin-top: 10px;
-    }
-
     .menu-button {
         padding: 8px 10px;
         margin-top: 9px;
         font-size: 30px;
         color: #fff;
-    }
-
-    figure.effect-Beauty h2 {
-        margin-top: 15%;
-        font-size: 16px;
-    }
-
-    figure.effect-Beauty p {
-        padding: 6px;
-        display: none;
-    }
-}
-
-@media (min-width: 768px) and (max-width: 990px) {
-    .social {
-        margin-top: 10px;
-    }
-
-    .notes button {
-        padding: 14px 19px;
-        font-size: 13px;
     }
 }
