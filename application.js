@@ -28,7 +28,7 @@ $(function () {
 
 $(document).ready(function () {
     $(document).on("scroll", onScroll);
-    $('a[href^="#"]').on('click', function (e) {
+    $('.page_scroll').on('click', function (e) {
         e.preventDefault();
         $(document).off("scroll");
 

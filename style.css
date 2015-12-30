@@ -36,7 +36,7 @@ img {
     width: 100%;
 }
 
-input[type=text]:focus, textarea:focus {
+input[type=text]:focus, textarea.form-control:focus {
   box-shadow: 0 0 5px #ae1016;
   border: 1px solid #ae1016;
 }
@@ -274,7 +274,6 @@ input[type=text]:focus, textarea:focus {
 
 .navstyle li.blank {
 	background: #950000;
-	border-left: 1px solid #fff;
 }
 
 .navstyle li.blank:hover {
@@ -425,7 +424,7 @@ footer .btn-primary:hover {
     letter-spacing: 2px;
 }
 
-@media (min-width: 200px) and (max-width: 767px) {
+@media (max-width: 767px) {
     .navstyle {
         width: 100%;
     }
@@ -441,5 +440,11 @@ footer .btn-primary:hover {
         margin-top: 9px;
         font-size: 30px;
         color: #fff;
+    }
+}
+
+@media (min-width: 768px) {
+    .navstyle li.blank {
+        border-left: 1px solid #fff;
     }
 }
