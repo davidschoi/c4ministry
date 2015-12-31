@@ -32,6 +32,20 @@ a:hover {
     border: 1px solid #ae1016;
 }
 
+.btn-info {
+    background: #fff;
+    color: #ae1016;
+    border: 1px solid #ae1016;
+}
+
+.btn-info:active,
+.btn-info:focus,
+.btn-info:hover {
+    background: #ae1016;
+    color: #fff;
+    border: 1px solid #ae1016;
+}
+
 img {
     width: 100%;
 }
@@ -98,10 +112,11 @@ input[type=text]:focus, textarea.form-control:focus {
     margin: 30px -2px 0 0;
 }
 
-.arrow:hover, .arrow:focus {
+.arrow:hover,
+.arrow:focus {
     text-align: center;
     font-size: 60px;
-    color: #480000;
+    color: #7b0000;
     display: inline-block;
     margin: 30px -2px 0 0;
 }
@@ -249,7 +264,7 @@ input[type=text]:focus, textarea.form-control:focus {
     height: auto;
     font-family: 'Pacifico', cursive;
     color: #fff;
-    font-size: 34px;
+    font-size: 28px;
 }
 
 .navstyle li a {
@@ -272,15 +287,7 @@ input[type=text]:focus, textarea.form-control:focus {
 	color: #e14349;
 }
 
-.navstyle li.blank {
-	background: #950000;
-}
-
-.navstyle li.blank:hover {
-	cursor: pointer;
-}
-
-.navstyle li.modal {
+.navstyle li.dark {
     background: #950000;
 }
 
@@ -293,7 +300,8 @@ input[type=text]:focus, textarea.form-control:focus {
     margin-top: 60px;
 }
 
-h3 {
+h3,
+.tumblr_title {
     margin: 0;
     font-family: 'Raleway', sans-serif;
     font-size: 22px;
@@ -354,6 +362,27 @@ section {
 	background-image: url('images/background-nature.jpg');
     color: #fff;
     padding: 0;
+}
+
+/*------------------------------------------/
+/-----------------Blog----------------------/
+/------------------------------------------*/
+#tumblr li {
+    list-style-type: none;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+}
+
+#tumblr li:last-child {
+    border-bottom: 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+#tumblr .date {
+    color: #000;
+    font-style: italic;
 }
 
 /*------------------------------------------/
@@ -444,7 +473,7 @@ footer .btn-primary:hover {
 }
 
 @media (min-width: 768px) {
-    .navstyle li.blank {
-        border-left: 1px solid #fff;
+    .navstyle li.last {
+        border-right: 1px solid #fff;
     }
 }

@@ -1,8 +1,8 @@
-$(window).load(function () {
+$(window).load(function() {
     $("#menu").sticky({topSpacing: 0});
 });
 
-$(function () {
+$(function() {
     var windowH = $(window).height();
     var bannerH = $('#banner').height();
     if (windowH > bannerH) {
@@ -62,6 +62,6 @@ function onScroll(event) {
     });
 }
 
-$('#modal').on('shown.bs.modal', function () {
-	$('#myInput').focus();
-})
+$('#modal [type="submit"]').on('click', function() {
+    $('#modal .close').click();
+}) 
