@@ -1,9 +1,9 @@
 // Tumblr API
 function loadPosts() {
     var key = "api_key=USV2JcShmHgoYysSrXKL1OyzmouVcG3PxCtAJ0OT8rGkSkuGNR";
-    var api = "https://api.tumblr.com/v2/blog/davidgumzchoi.tumblr.com/";
-    var retrieve_more = function (offset) {
-        $.getJSON(api + "posts/text?callback=?&filter=text&limit=20&offset=" + offset + "&" + key,function(data) {
+    var api = "https://api.tumblr.com/v2/blog/c4ministry.tumblr.com/";
+    var retrieve_more = function(offset) {
+        $.getJSON(api + "posts/text?callback=?&filter=text&offset=" + offset + "&" + key,function(data) {
             $.each(data.response.posts, function(i, item) {
                 var date = new Date(item.date).toISOString();
                 var momentDate = moment(date).tz('America/Los_Angeles').format('MMMM Do YYYY, h:mm:ss a');
@@ -17,10 +17,6 @@ function loadPosts() {
                     '<p><a class="btn btn-info" href="' + postUrl + '" target="blank">' + 'Read More' + '</a></p>' +
                 '</li>')
             });
-
-            if (data.response.posts.length == 20) {
-                retrieve_more(offset + 20);
-            }
         });
     };
     retrieve_more(0);
