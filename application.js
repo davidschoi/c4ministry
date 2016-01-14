@@ -49,7 +49,7 @@ $(document).ready(function () {
 });
 
 // Smooth Scrolling
-$('nav a.page-scroll').click(function() {
+$('a.page-scroll').click(function() {
   if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
     var target = $(this.hash);
     target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
@@ -64,7 +64,7 @@ $('nav a.page-scroll').click(function() {
 
 function onScroll(event) {
     var scrollPosition = $(document).scrollTop();
-    $('.nav li a').each(function () {
+    $('a.page-scroll').each(function () {
         var currentLink = $(this);
         var refElement = $(currentLink.attr("href"));
         if (refElement.position().top <= scrollPosition && refElement.position().top + refElement.height() > scrollPosition) {
