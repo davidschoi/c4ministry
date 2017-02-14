@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>C4 - Blog</title>
+        <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="192x192"  href="favicon/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+        <link rel="manifest" href="favicon/manifest.json">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
+        <meta name="theme-color" content="#ffffff">
+        <link href="http://fonts.googleapis.com/css?family=Raleway:400,700,200,100,300,500,600,800,900" rel="stylesheet" type="text/css">
+        <link href="http://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet" type="text/css">
+        <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,700italic,900,400italic,300italic" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <div class="navbar menubar" id="menu">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle menu-button" data-toggle="collapse" data-target="#myNavbar" href="#blog">
+                        <span class="glyphicon glyphicon-align-justify"></span>
+                    </button>
+                    <a class="navbar-brand logo hidden-md" href="/">California Christ Community Church</a>
+                    <a class="navbar-brand logo visible-md" href="/">C4</a>
+                </div>
+                <nav class="collapse navbar-collapse" id="myNavbar" role="navigation">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="/#banner" class="page-scroll">Home</a>
+                        </li>
+                        <li>
+                            <a href="/#ministry" class="page-scroll">Ministry</a>
+                        </li>
+                        <li class="last">
+                            <a href="/#vision" class="page-scroll">Vision</a>
+                        </li>
+                        <li class="dark">
+                            <a href="blog.html" class="active">Blog</a>
+                        </li>
+                        <li class="dark">
+                            <a href="sermons.html">Sermons</a>
+                        </li>
+                        <li class="dark">
+                            <a href="https://www.facebook.com/california.christ.community.church/photos/" target="_blank">Gallery</a>
+                        </li>
+                        <li class="modal">
+                            <a href="#modal" data-toggle="modal" data-target="#modal">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <section class="blog" id="blog">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-12 centertext">
+                        <p class="all-td">from Tumblr</p>
+                        <h2>Blog</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 featurebox">
+                        <div class="fh-desc">
+                            <ul class="tumblr" id="tumblr"></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer id="footer"></footer>
+        <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"></div>
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/jquery.sticky.min.js"></script>
+        <script type="text/javascript" src="js/moment.min.js"></script>
+        <script type="text/javascript" src="application.js"></script>
+        <script>loadPosts();</script>
+    </body>
+</html>
