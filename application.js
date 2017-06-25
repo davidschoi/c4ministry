@@ -1,118 +1,102 @@
 // AJAX Load Components
 // -----------------------------
+$('#header').load('components/header.html');
 $('#footer').load('components/footer.html');
 $('#modal').load('components/modal.html');
 
-// Sticky
-// -----------------------------
-$("#menu").sticky();
-
-if ($('#banner').length) {
-    $(function() {
-        var windowH = $(window).height();
-        var bannerH = $('#banner').height();
-        if (windowH > bannerH) {
-            $('#banner').css({'height': ($(window).height() - 68) + 'px'});
-            $('#bannertext').css({'height': ($(window).height() - 68) + 'px'});
-        }
-        $(window).resize(function () {
-            var windowH = $(window).height();
-            var bannerH = $('#banner').height();
-            var differenceH = windowH - bannerH;
-            var newH = bannerH + differenceH;
-            var truecontentH = $('#bannertext').height();
-            if (windowH < truecontentH) {
-                $('#banner').css({'height': (newH - 68) + 'px'});
-                $('#bannertext').css({'height': (newH - 68) + 'px'});
-            }
-            if (windowH > truecontentH) {
-                $('#banner').css({'height': (newH - 68) + 'px'});
-                $('#bannertext').css({'height': (newH - 68) + 'px'});
-            }
-        })
-    });
-}
-
-// Navbar Active
-// -----------------------------
 $(document).ready(function () {
-    $(document).on("scroll", onScroll);
-    $('a.page_scroll').on('click', function (e) {
-        e.preventDefault();
-        $(document).off("scroll");
+    $(document).ajaxComplete(function () {
 
-        $('a').each(function () {
-            $(this).removeClass('active');
+        // Sticky
+        // -----------------------------
+        $("#menu").sticky();
+
+        if ($('#banner').length) {
+            $(function() {
+                var windowH = $(window).height();
+                var bannerH = $('#banner').height();
+                if (windowH > bannerH) {
+                    $('#banner').css({'height': ($(window).height() - 68) + 'px'});
+                    $('#bannertext').css({'height': ($(window).height() - 68) + 'px'});
+                }
+                $(window).resize(function () {
+                    var windowH = $(window).height();
+                    var bannerH = $('#banner').height();
+                    var differenceH = windowH - bannerH;
+                    var newH = bannerH + differenceH;
+                    var truecontentH = $('#bannertext').height();
+                    if (windowH < truecontentH) {
+                        $('#banner').css({'height': (newH - 68) + 'px'});
+                        $('#bannertext').css({'height': (newH - 68) + 'px'});
+                    }
+                    if (windowH > truecontentH) {
+                        $('#banner').css({'height': (newH - 68) + 'px'});
+                        $('#bannertext').css({'height': (newH - 68) + 'px'});
+                    }
+                })
+            });
+        }
+
+        // Navbar Active
+        // -----------------------------
+        // $(document).on("scroll", onScroll);
+        // $('a.page_scroll').on('click', function (e) {
+        //     e.preventDefault();
+        //     $(document).off("scroll");
+
+        //     $('a').each(function () {
+        //         $(this).removeClass('active');
+        //     })
+        //     $(this).addClass('active');
+
+        //     var target = this.hash;
+        //     $target = $(target);
+        //     $('html, body').stop().animate({
+        //         'scrollTop': $target.offset().top
+        //     }, 500, 'swing', function () {
+        //         window.location.hash = target;
+        //         $(document).on("scroll", onScroll);
+        //     });
+        // });
+
+        // function onScroll(event) {
+        //     var scrollPosition = $(document).scrollTop();
+        //     $('a.page-scroll').each(function () {
+        //         var currentLink = $(this);
+        //         var refElement = $(currentLink.attr("href"));
+        //         if (refElement.length) {
+        //             if (refElement.position().top <= scrollPosition && refElement.position().top + refElement.height() > scrollPosition) {
+        //                 $('.nav li a').removeClass("active");
+        //                 currentLink.addClass("active");
+        //             } else {
+        //                 currentLink.removeClass("active");
+        //             }
+        //         }
+        //     });
+        // }
+
+        // Modal
+        // -----------------------------
+        $('#modal [type="submit"]').on('click', function() {
+            $('#modal .close').click();
         })
-        $(this).addClass('active');
-
-        var target = this.hash;
-        $target = $(target);
-        $('html, body').stop().animate({
-            'scrollTop': $target.offset().top
-        }, 500, 'swing', function () {
-            window.location.hash = target;
-            $(document).on("scroll", onScroll);
-        });
     });
 });
-
-// Cleanup Table
-// -----------------------------
-if ($('.cleanup').length) {
-    var cleanupDatesArray = $('.cleanup table tr td.cleanup-date');
-    var cleanupStatusArray = $('.cleanup table tr td.cleanup-status')
-    $.each(cleanupDatesArray, function() {
-        var dateText = $(this).text();
-        if (new Date(dateText) < new Date()) {
-            $(this).siblings('.cleanup-status').addClass('success').text('COMPLETED');
-        } else {
-            $(this).siblings('.cleanup-status').addClass('warning').text('PENDING');
-        }
-    });
-
-    $('.cleanup-status.warning').first()
-        .removeClass('warning')
-        .html('<a class="page-scroll" href="#cleanup">CLEANUP INSTRUCTIONS</a>')
-        .parent().addClass('danger');
-}
 
 // Smooth Scrolling
 // -----------------------------
 $('a.page-scroll').click(function() {
-  if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-    var target = $(this.hash);
-    target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-    if (target.length) {
-      $('html,body').animate({
-        scrollTop: target.offset().top
-      }, 1000);
-      return false;
-    }
-  }
-});
-
-function onScroll(event) {
-    var scrollPosition = $(document).scrollTop();
-    $('a.page-scroll').each(function () {
-        var currentLink = $(this);
-        var refElement = $(currentLink.attr("href"));
-        if (refElement.length) {
-            if (refElement.position().top <= scrollPosition && refElement.position().top + refElement.height() > scrollPosition) {
-                $('.nav li a').removeClass("active");
-                currentLink.addClass("active");
-            } else {
-                currentLink.removeClass("active");
-            }
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+        var target = $(this.hash);
+        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+        if (target.length) {
+        $('html,body').animate({
+            scrollTop: target.offset().top
+        }, 1000);
+        return false;
         }
-    });
-}
-
-// Modal
-// -----------------------------
-$('#modal [type="submit"]').on('click', function() {
-    $('#modal .close').click();
-})
+    }
+});
 
 // Tumblr
 // -----------------------------
@@ -155,8 +139,6 @@ if ($('#video').length) {
     $(document).ready(function() {
         $.getScript(apiEndpoint + vimeoUsername + '/videos.json?callback=' + videosCallback);
     });
-
-    https://api.vimeo.com/oauth/authorize?client_id=XXXXX&response_type=code&redirect_uri=XXXX.YYY/ZZZZZ&state=XXXXXX
 
     function getVideo(url) {
         $.getScript(oEmbedEndpoint + '?url=' + url + '&callback=' + oEmbedCallback);
@@ -206,6 +188,43 @@ if ($('#video').length) {
         $('#embed').html(unescape(video.html));
     }
 }
+
+// Cleanup Table
+// -----------------------------
+if ($('.cleanup').length) {
+    var cleanupDatesArray = $('.cleanup table tr td.cleanup-date');
+    var cleanupStatusArray = $('.cleanup table tr td.cleanup-status')
+    $.each(cleanupDatesArray, function() {
+        var dateText = $(this).text();
+        if (new Date(dateText) < new Date()) {
+            $(this).siblings('.cleanup-status').addClass('success').text('COMPLETED');
+        } else {
+            $(this).siblings('.cleanup-status').addClass('warning').text('PENDING');
+        }
+    });
+
+    $('.cleanup-status.warning').first()
+        .removeClass('warning')
+        .html('<a class="page-scroll" href="#cleanup">CLEANUP INSTRUCTIONS</a>')
+        .parent().addClass('danger');
+}
+
+// Events Calendar
+// -----------------------------
+var mykey = 'AIzaSyAZYjP7ZM292UwuHO3H2-TbqJeaVUV8wzA'; // typically like Gtg-rtZdsreUr_fLfhgPfgff
+var calendarid = '0rm2tpg2mag9k28obk2b2dein4%40group.calendar.google.com'; // will look somewhat like 3ruy234vodf6hf4sdf5sd84f@group.calendar.google.com
+
+$.ajax({
+    type: 'GET',
+    url: encodeURI('https://www.googleapis.com/calendar/v3/calendars/' + calendarid + '/events?key=' + mykey),
+    dataType: 'json',
+    success: function (response) {
+        //do whatever you want with each
+    },
+    error: function (error) {
+        //tell that an error has occurred
+    }
+});
 
 // Google Analytics
 // -----------------------------
