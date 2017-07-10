@@ -126,6 +126,7 @@ input[type=text]:focus, textarea.form-control:focus {
 
 .banner-text h3 {
     color: #eee;
+    margin-bottom: 30px;
 }
 
 .banner-text h4 {

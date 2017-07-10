@@ -211,19 +211,23 @@ if ($('.cleanup').length) {
 
 // Events Calendar
 // -----------------------------
-var mykey = 'AIzaSyAZYjP7ZM292UwuHO3H2-TbqJeaVUV8wzA'; // typically like Gtg-rtZdsreUr_fLfhgPfgff
-var calendarid = '0rm2tpg2mag9k28obk2b2dein4%40group.calendar.google.com'; // will look somewhat like 3ruy234vodf6hf4sdf5sd84f@group.calendar.google.com
+var API_KEY = 'AIzaSyClI00QamBabQuqnt-FLGHkXbOHZVI5NGY';
+var calendarId = '0rm2tpg2mag9k28obk2b2dein4@group.calendar.google.com';
 
 $.ajax({
     type: 'GET',
-    url: encodeURI('https://www.googleapis.com/calendar/v3/calendars/' + calendarid + '/events?key=' + mykey),
+    url: encodeURI('https://www.googleapis.com/calendar/v3/calendars/' + calendarId + '/events?key=' + API_KEY),
     dataType: 'json',
     success: function (response) {
-        //do whatever you want with each
+        console.log(response);
     },
     error: function (error) {
-        //tell that an error has occurred
+        console.log(error);
     }
+});
+
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip();
 });
 
 // Google Analytics
