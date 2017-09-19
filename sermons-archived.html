@@ -26,26 +26,27 @@
         <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,700italic,900,400italic,300italic" rel="stylesheet" type="text/css">
         <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
-        <link rel="stylesheet" type="text/css" href="css/jquery.dataTables.min.css">
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body>
         <header id="header"></header>
-        <section class="sermon" id="sermon">
+        <section class="vimeo" id="vimeo">
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 col-sm-6 col-xs-12 centertext">
-                        <p class="all-td">from MixCloud</p>
+                        <p class="all-td">from Vimeo</p>
                         <h2>Sermons</h2>
                     </div>
                 </div>
             </div>
         </section>
+        <div class="embed-container">
+            <div id="embed"></div>
+        </div>
         <div class="table-container container">
             <div class="row">
                 <div class="col-xs-12">
-                    <div id="mixcloud-embed"></div>
-                    <table id="mixcloud-table" class="table table-hover">
+                    <table id="vimeo-table" class="table table-hover">
                         <thead>
                             <tr>
                                 <th>Date</th>
@@ -57,7 +58,7 @@
                         <tbody>
                         </tbody>
                     </table>
-                    <div id="see-more"><a href="https://vimeo.com/c4ministry">Hear more sermons from 2017-09-10 on Vimeo</a></div>
+                    <div id="see-more"></div>
                 </div>
             </div>
         </div>
@@ -67,7 +68,6 @@
         <script type="text/javascript" src="js/bootstrap.min.js"></script>
         <script type="text/javascript" src="js/jquery.sticky.min.js"></script>
         <script type="text/javascript" src="js/moment.min.js"></script>
-        <script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
         <script type="text/javascript" src="application.js"></script>
     </body>
 </html>

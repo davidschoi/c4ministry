@@ -405,6 +405,26 @@ section {
 }
 
 /*------------------------------------------/
+/-----------------Blog----------------------/
+/------------------------------------------*/
+.staff .thumbnail img {
+    max-height: 250px;
+}
+
+.staff .caption h3 {
+    min-height: 48px;
+}
+
+.staff .pastor-row .thumbnail {
+    display: flex;
+    align-items: flex-start;
+}
+
+.staff .pastor-row .caption h3 {
+    min-height: auto;
+}
+
+/*------------------------------------------/
 /-----------------Footer--------------------/
 /------------------------------------------*/
 footer {
@@ -541,10 +561,6 @@ table th {
 
 .cleanup-list li {
     margin-bottom: 8px;
-}
-
-.caption h3 {
-    min-height: 48px;
 }
 
 .calendar-wrapper {

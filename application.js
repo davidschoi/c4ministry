@@ -37,44 +37,6 @@ $(document).ready(function () {
             });
         }
 
-        // Navbar Active
-        // -----------------------------
-        // $(document).on("scroll", onScroll);
-        // $('a.page_scroll').on('click', function (e) {
-        //     e.preventDefault();
-        //     $(document).off("scroll");
-
-        //     $('a').each(function () {
-        //         $(this).removeClass('active');
-        //     })
-        //     $(this).addClass('active');
-
-        //     var target = this.hash;
-        //     $target = $(target);
-        //     $('html, body').stop().animate({
-        //         'scrollTop': $target.offset().top
-        //     }, 500, 'swing', function () {
-        //         window.location.hash = target;
-        //         $(document).on("scroll", onScroll);
-        //     });
-        // });
-
-        // function onScroll(event) {
-        //     var scrollPosition = $(document).scrollTop();
-        //     $('a.page-scroll').each(function () {
-        //         var currentLink = $(this);
-        //         var refElement = $(currentLink.attr("href"));
-        //         if (refElement.length) {
-        //             if (refElement.position().top <= scrollPosition && refElement.position().top + refElement.height() > scrollPosition) {
-        //                 $('.nav li a').removeClass("active");
-        //                 currentLink.addClass("active");
-        //             } else {
-        //                 currentLink.removeClass("active");
-        //             }
-        //         }
-        //     });
-        // }
-
         // Modal
         // -----------------------------
         $('#modal [type="submit"]').on('click', function() {
@@ -126,68 +88,116 @@ if ($('#blog').length) {
     }
 }
 
+// MixCloud
+// -----------------------------
+if ($('#sermon').length) {
+    $(document).ready(function() {
+        $.ajax({
+            type: 'GET',
+            url: encodeURI('https://api.mixcloud.com/c4ministry/cloudcasts'),
+            dataType: 'jsonp',
+            success: function(response) {
+                var slugArray = [];
+
+                for (var i = 0; i < response.data.length; i++) {
+                    slugArray.push(response.data[i].slug);
+                }
+                
+                $('#mixcloud-embed').html('<iframe width="100%" height="120" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&light=1&feed=%2Fc4ministry%2F" + response.data[i].slug + "%2F" frameborder="0"></iframe>')
+
+                $.each(slugArray, function(i, slug) {
+                    $.ajax({
+                        type: 'GET',
+                        url: encodeURI('https://api.mixcloud.com/c4ministry/' + slug),
+                        dataType: 'jsonp',
+                        success: function(response) {
+                            var date = "Date: ";
+                            var scripture = "Scripture: ";
+                            var speaker = "Speaker: ";
+                            var videosMax = 20;
+
+                            var des = response.description;
+                            var desDate = des.substring(des.indexOf(date) + date.length, des.indexOf("| " + scripture));
+                            var desScripture = des.substring(des.indexOf(scripture) + scripture.length, des.indexOf("| " + speaker));
+                            var desSpeaker = des.substring(des.indexOf(speaker) + speaker.length);
+                
+                            var html = '<tr>';
+                            html += '<td>' + desDate + '</td>'
+                            html += '<td><a target="_blank" class="sermon" href="' + response.url + '">' + response.name + '</a></td>';
+                            html += '<td><a target="_blank" href="' + 'http://www.biblegateway.com/passage/?search=' + desScripture + '">' + desScripture + '</a></td>'
+                            html += '<td>' + desSpeaker + '</td>'
+                            html += '</tr>'
+                            $('#mixcloud-table tbody').append(html);
+                        }
+                    });
+                });
+            }
+        });
+    });
+}
+
 // Vimeo
 // -----------------------------
-if ($('#video').length) {
-    var apiEndpoint = 'http://vimeo.com/api/v2/';
-    var vimeoUsername = 'c4ministry';
-    var videosCallback = 'setupGallery';
-    var oEmbedEndpoint = 'http://vimeo.com/api/oembed.json'
-    var oEmbedCallback = 'switchVideo';
+// if ($('#vimeo').length) {
+//     var apiEndpoint = 'http://vimeo.com/api/v2/';
+//     var vimeoUsername = 'c4ministry';
+//     var videosCallback = 'setupGallery';
+//     var oEmbedEndpoint = 'http://vimeo.com/api/oembed.json'
+//     var oEmbedCallback = 'switchVideo';
 
-    // Get the user's videos
-    $(document).ready(function() {
-        $.getScript(apiEndpoint + vimeoUsername + '/videos.json?callback=' + videosCallback);
-    });
+//     // Get the user's videos
+//     $(document).ready(function() {
+//         $.getScript(apiEndpoint + vimeoUsername + '/videos.json?callback=' + videosCallback);
+//     });
 
-    function getVideo(url) {
-        $.getScript(oEmbedEndpoint + '?url=' + url + '&callback=' + oEmbedCallback);
-    }
+//     function getVideo(url) {
+//         $.getScript(oEmbedEndpoint + '?url=' + url + '&callback=' + oEmbedCallback);
+//     }
 
-    function setupGallery(videos) {
-        // Load the first video
-        getVideo(videos[0].url);
+//     function setupGallery(videos) {
+//         // Load the first video
+//         getVideo(videos[0].url);
 
-        var date = "Date: ";
-        var scripture = "Scripture: ";
-        var speaker = "Speaker: ";
-        var videosMax = 12;
+//         var date = "Date: ";
+//         var scripture = "Scripture: ";
+//         var speaker = "Speaker: ";
+//         var videosMax = 12;
 
-        // Add the videos list to table
-        for (var i = 0; i < videosMax; i++) {
-            var des = videos[i].description; // Date: yyyy-mm-dd, Scripture: Romans 8:14-17, Speaker: Pastor Daniel Park
-            var desDate = des.substring(des.indexOf(date) + date.length, des.indexOf(", " + scripture));
-            var desScripture = des.substring(des.indexOf(scripture) + scripture.length, des.indexOf(", " + speaker));
-            var desSpeaker = des.substring(des.indexOf(speaker) + speaker.length);
+//         // Add the videos list to table
+//         for (var i = 0; i < videosMax; i++) {
+//             var des = videos[i].description; // Date: yyyy-mm-dd, Scripture: Romans 8:14-17, Speaker: Pastor Daniel Park
+//             var desDate = des.substring(des.indexOf(date) + date.length, des.indexOf(", " + scripture));
+//             var desScripture = des.substring(des.indexOf(scripture) + scripture.length, des.indexOf(", " + speaker));
+//             var desSpeaker = des.substring(des.indexOf(speaker) + speaker.length);
 
-            var html = '<tr>';
-            html += '<td>' + desDate + '</td>'
-            html += '<td><a class="sermon" href="' + videos[i].url + '">' + videos[i].title + '</a></td>';
-            html += '<td><a target="_blank" href="' + 'http://www.biblegateway.com/passage/?search=' + desScripture + '">' + desScripture + '</a></td>'
-            html += '<td>' + desSpeaker + '</td>'
-            html += '</tr>'
-            $('#video-table tbody').append(html);
+//             var html = '<tr>';
+//             html += '<td>' + desDate + '</td>'
+//             html += '<td><a class="sermon" href="' + videos[i].url + '">' + videos[i].title + '</a></td>';
+//             html += '<td><a target="_blank" href="' + 'http://www.biblegateway.com/passage/?search=' + desScripture + '">' + desScripture + '</a></td>'
+//             html += '<td>' + desSpeaker + '</td>'
+//             html += '</tr>'
+//             $('#vimeo-table tbody').append(html);
 
-            // See more link beyond last element in array
-            if (i === videosMax - 1) {
-                var htmlUrl = '<a href="https://vimeo.com/c4ministry/videos/page:2/sort:date">';
-                htmlUrl += 'Hear more sermons before ' + desDate + '</a>';
-                $('#see-more').append(htmlUrl);
-            }
-        }
+//             // See more link beyond last element in array
+//             if (i === videosMax - 1) {
+//                 var htmlUrl = '<a href="https://vimeo.com/c4ministry/videos/page:2/sort:date">';
+//                 htmlUrl += 'Hear more sermons before ' + desDate + '</a>';
+//                 $('#see-more').append(htmlUrl);
+//             }
+//         }
 
-        // Switch to the video when a thumbnail is clicked
-        $('#video-table a.sermon').click(function(event) {
-            event.preventDefault();
-            getVideo(this.href + '&autoplay=true');
-            return false;
-        });
-    }
+//         // Switch to the video when a thumbnail is clicked
+//         $('#vimeo-table a.sermon').click(function(event) {
+//             event.preventDefault();
+//             getVideo(this.href + '&autoplay=true');
+//             return false;
+//         });
+//     }
 
-    function switchVideo(video) {
-        $('#embed').html(unescape(video.html));
-    }
-}
+//     function switchVideo(video) {
+//         $('#embed').html(unescape(video.html));
+//     }
+// }
 
 // Cleanup Table
 // -----------------------------
@@ -219,10 +229,10 @@ $.ajax({
     url: encodeURI('https://www.googleapis.com/calendar/v3/calendars/' + calendarId + '/events?key=' + API_KEY),
     dataType: 'json',
     success: function (response) {
-        console.log(response);
+        // console.log(response);
     },
     error: function (error) {
-        console.log(error);
+        // console.log(error);
     }
 });
 
