@@ -17,8 +17,8 @@ Using QuickTime Player trim the sermon. The sermon should start when the speaker
 
 2. Upload Sermon
 
-   Title: SERMON_TITLE
-   Tags: #sermon #genesis
+   Title: SERMON_TITLE  
+   Tags: #sermon #genesis  
    Description: Date: 2017-01-01 | Scripture: Genesis 39:7-23 | Speaker: Pastor Daniel Park
    
    Description must follow specific format so that the information could be parsed properly on [c4ministry.com](http://www.c4ministry.com)
