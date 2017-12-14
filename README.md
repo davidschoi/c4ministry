@@ -12,7 +12,7 @@ For guidance on our workflow in recording and uploading our sermons please refer
 
 ## License
 
-For licensing information please refer to [LICENSE]((https://github.com/davidgumzchoi/c4ministry/blob/master/LICENSE.md)
+For licensing information please refer to [LICENSE](https://github.com/davidgumzchoi/c4ministry/blob/master/LICENSE.md)
 
 ## Credits
 
