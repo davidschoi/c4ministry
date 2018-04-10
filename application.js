@@ -134,19 +134,19 @@ if ($('#sermon').length) {
             }
         });
         
-        waitForEl($("#mixcloud-table tr td"), function() {
+        waitForEl($('#mixcloud-table tr td .sermon'), function() {
             $('#mixcloud-table').DataTable();
         });
     });
 }
 
 var waitForEl = function(selector, callback) {
-    if (jQuery(selector).length) {
+    if ($(selector).length) {
         callback();
     } else {
         setTimeout(function() {
             waitForEl(selector, callback);
-        }, 100);
+        }, 500);
     }
 };
 
