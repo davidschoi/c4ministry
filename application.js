@@ -132,19 +132,23 @@ if ($('#sermon').length) {
                     });
                 });
             }
-        }).done(function() {
-            $('#mixcloud-table').DataTable({
-//                 data: slugArray,
-//                 columns: [
-//                     { title: 'Date' },
-//                     { title: 'Sermon' },
-//                     { title: 'Scripture' },
-//                     { title: 'Speaker' },
-//                 ]
-            });
+        });
+        
+        waitForEl($("#mixcloud-table tr td"), function() {
+            $('#mixcloud-table').DataTable();
         });
     });
 }
+
+var waitForEl = function(selector, callback) {
+    if (jQuery(selector).length) {
+        callback();
+    } else {
+        setTimeout(function() {
+            waitForEl(selector, callback);
+        }, 100);
+    }
+};
 
 // Vimeo
 // -----------------------------
