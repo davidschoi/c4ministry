@@ -9,6 +9,8 @@ You will then retrieve your mobile device during the offering prayer, which will
 [Trim .m4a file on your Mac](http://osxdaily.com/2010/09/16/trim-mp3-on-your-mac/) 
 Using QuickTime Player trim the sermon. The sermon should start when the speaker begins preaching and end after the concluding prayer.
 
+If you don't have a Mac, you can also use [AudioTrimmer](https://audiotrimmer.com/), which allows you to Trim files pretty accurately by typing in the specific seconds manually.
+
 ## Upload Sermon to MixCloud
 1. Login to [MixCloud](https://www.mixcloud.com/c4ministry/)
 
