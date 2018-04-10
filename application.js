@@ -134,6 +134,10 @@ if ($('#sermon').length) {
             }
         });
     });
+    
+    $(document).ready(function () {
+        $('#mixcloud-table').DataTable();
+    });
 }
 
 // Vimeo
