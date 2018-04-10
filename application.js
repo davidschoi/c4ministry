@@ -131,12 +131,10 @@ if ($('#sermon').length) {
                         }
                     });
                 });
+                
+                $('#mixcloud-table').DataTable();
             }
         });
-    });
-    
-    $(document).ready(function () {
-        $('#mixcloud-table').DataTable();
     });
 }
 
