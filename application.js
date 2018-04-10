@@ -103,8 +103,8 @@ if ($('#sermon').length) {
                     slugArray.push(response.data[i].slug);
                 }
                 
-                $('#mixcloud-embed').html('<iframe width="100%" height="120" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&light=1&feed=%2Fc4ministry%2F" + response.data[i].slug + "%2F" frameborder="0"></iframe>')
-
+                $('#mixcloud-embed').html('<iframe width="100%" height="120" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&light=1&feed=%2Fc4ministry%2F' + response.data[i].slug + '%2F" frameborder="0"></iframe>'); 
+                
                 $.each(slugArray, function(i, slug) {
                     $.ajax({
                         type: 'GET',
@@ -131,9 +131,17 @@ if ($('#sermon').length) {
                         }
                     });
                 });
-                
-                $('#mixcloud-table').DataTable();
             }
+        }).done(function() {
+            $('#mixcloud-table').DataTable({
+//                 data: slugArray,
+//                 columns: [
+//                     { title: 'Date' },
+//                     { title: 'Sermon' },
+//                     { title: 'Scripture' },
+//                     { title: 'Speaker' },
+//                 ]
+            });
         });
     });
 }
