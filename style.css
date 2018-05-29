@@ -493,32 +493,8 @@ footer .btn-primary:hover {
 }
 
 /*------------------------------------------/
-/-----------------Vimeo---------------------/
+/-----------------Sermon--------------------/
 /------------------------------------------*/
-.embed-container {
-    background-color: #000;
-}
-
-#embed {
-    background-color: #000;
-    height: auto;
-    margin: 0 auto;
-    max-width: 60%;
-    overflow: hidden;
-    padding-bottom: 33.75%;
-    position: relative;
-}
-
-#embed iframe,
-#embed object,
-#embed embed {
-    height: 100%;
-    left: 0;
-    position: absolute;
-    width: 100%;
-    top: 0;
-}
-
 table {
     font-size: 16px;
     margin-top: 25px;
@@ -526,6 +502,14 @@ table {
 
 table th {
     text-transform: uppercase;
+}
+
+#mixcloud-embed {
+    margin-bottom: 30px;
+}
+
+#see-more {
+    margin-top: 20px;
 }
 
 #see-more a {
