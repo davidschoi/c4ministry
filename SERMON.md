@@ -8,7 +8,7 @@ You will then retrieve your mobile device during the offering prayer, which will
 ## Trim Sermon
 [AudioTrimmer](https://audiotrimmer.com/) allows you to Trim files pretty accurately by typing in the specific seconds manually or selecting from the range of the audio file. The sermon should start when the speaker begins preaching and end after the concluding prayer.
 
-[Trim .m4a file on your Mac](http://osxdaily.com/2010/09/16/trim-mp3-on-your-mac/) 
+[Trim .m4a file on your Mac](https://osxdaily.com/2010/09/16/trim-mp3-on-your-mac/) 
 If you prefer you can use QuickTime Player to trim the sermon.
 
 ## Upload Sermon to MixCloud
@@ -23,7 +23,7 @@ If you prefer you can use QuickTime Player to trim the sermon.
    Tags: #sermon #psalms  
    Description: Date: 2018-05-13 | Scripture: Psalms 34 | Speaker: Pastor Daniel Park
    
-   Description must follow specific format so that the information could be parsed properly on [c4ministry.com](http://www.c4ministry.com)
+   Description must follow specific format so that the information could be parsed properly on [c4ministry.com](https://www.c4ministry.com)
 
 ## Upload Facebook post
 

@@ -21,9 +21,9 @@
         <meta name="msapplication-TileColor" content="#ffffff">
         <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
         <meta name="theme-color" content="#ffffff">
-        <link href="http://fonts.googleapis.com/css?family=Raleway:400,700,200,100,300,500,600,800,900" rel="stylesheet" type="text/css">
-        <link href="http://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet" type="text/css">
-        <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,700italic,900,400italic,300italic" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Raleway:400,700,200,100,300,500,600,800,900" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,700italic,900,400italic,300italic" rel="stylesheet" type="text/css">
         <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
         <link rel="stylesheet" type="text/css" href="style.css">
@@ -34,14 +34,22 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 col-sm-6 col-xs-12 centertext">
-                        <p class="all-td">from Tumblr</p>
+                        <p class="all-td">from Medium</p>
                         <h2>Blog</h2>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-xs-12 featurebox">
                         <div class="fh-desc">
-                            <ul class="tumblr" id="tumblr"></ul>
+                            <div class="container">
+                                <div id="blogContent" class="section-content">
+                                    <div id="jsonContent" class="row"></div>
+                                </div>
+                                <div class="text-center featurebox">
+                                    <a id="loadBlogPosts" class="btn btn-primary" href="//medium.com/@browncoatsdp" target="_blank">View All Medium Blog Posts</a>
+                                    <a class="btn btn-secondary" href="/blog-archive.html">See Archived Tumblr Posts 2015</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -54,6 +62,5 @@
         <script type="text/javascript" src="js/jquery.sticky.min.js"></script>
         <script type="text/javascript" src="js/moment.min.js"></script>
         <script type="text/javascript" src="application.js"></script>
-        <script>loadPosts();</script>
     </body>
 </html>

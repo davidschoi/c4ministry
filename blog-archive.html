@@ -3,7 +3,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>C4 - Sermons</title>
+        <title>C4 - Blog Archive</title>
         <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
         <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
         <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
@@ -30,38 +30,23 @@
     </head>
     <body>
         <header id="header"></header>
-        <section class="vimeo" id="vimeo">
+        <section class="blog" id="blog-archive">
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 col-sm-6 col-xs-12 centertext">
-                        <p class="all-td">from Vimeo</p>
-                        <h2>Sermons</h2>
+                        <p class="all-td">from Tumblr</p>
+                        <h2>Blog</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 featurebox">
+                        <div class="fh-desc">
+                            <ul class="tumblr" id="tumblr"></ul>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
-        <div class="embed-container">
-            <div id="embed"></div>
-        </div>
-        <div class="table-container container">
-            <div class="row">
-                <div class="col-xs-12">
-                    <table id="vimeo-table" class="table table-hover">
-                        <thead>
-                            <tr>
-                                <th>Date</th>
-                                <th>Sermon</th>
-                                <th>Scripture</th>
-                                <th>Speaker</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        </tbody>
-                    </table>
-                    <div id="see-more"></div>
-                </div>
-            </div>
-        </div>
         <footer id="footer"></footer>
         <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"></div>
         <script type="text/javascript" src="js/jquery.min.js"></script>
@@ -69,5 +54,6 @@
         <script type="text/javascript" src="js/jquery.sticky.min.js"></script>
         <script type="text/javascript" src="js/moment.min.js"></script>
         <script type="text/javascript" src="application.js"></script>
+        <script>loadPosts();</script>
     </body>
 </html>
