@@ -5,6 +5,11 @@ $('#footer').load('components/footer.html');
 $('#modal').load('components/modal.html');
 
 $(document).ready(function () {
+    if (location.pathname === '/') {
+        $(window).on('load', function() {
+            $('#tempModal').modal('show');
+        });
+    }
     $(document).ajaxComplete(function () {
 
         // Sticky
