@@ -14,14 +14,14 @@ If you prefer you can use QuickTime Player to trim the sermon.
 ## Upload Sermon to MixCloud
 1. Login to [MixCloud](https://www.mixcloud.com/c4ministry/)
 
-   Username: c4ministry  
-   Password: Obtain MixCloud credentials from [David Choi](https://github.com/davidgumzchoi)
+   *Username*: c4ministry  
+   *Password*: Obtain MixCloud credentials from [David Choi](https://github.com/davidgumzchoi)
 
 2. Upload Sermon
 
-   Title: SERMON_TITLE  
-   Tags: #sermon #psalms  
-   Description: Date: 2018-05-13 | Scripture: Psalms 34 | Speaker: Pastor Daniel Park
+   *Title*: SERMON_TITLE  
+   *Tags*: #sermon #psalms  
+   *Description*: Date: 2018-05-13 | Scripture: Psalms 34 | Speaker: Pastor Daniel Park
    
    Description must follow specific format so that the information could be parsed properly on [c4ministry.com](https://www.c4ministry.com)
 
