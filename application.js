@@ -89,7 +89,7 @@ if ($('#blog').length) {
                     var srcEnd = item.description.substring(srcStart).indexOf('"') + srcStart; // Find where the URL ends
                     var src = item.description.substring(srcStart, srcEnd); // Extract just the URL
                     // output += '<div class="blog-element"><img class="img-responsive" src="' + src + '" width="360px" height="240px"></div></header>';
-                    output += '<div class="blog-content"><h4><a href="'+ item.link + '">' + item.title + '</a></h4>';
+                    output += '<div class="blog-content"><h4><a target="_blank" href="' + item.link + '">' + item.title + '</a></h4>';
                     output += '<div class="post-meta"><span>By ' + item.author + '</span></div>';
                     var yourString = item.description.replace(/<img[^>]*>/g,""); //replace with your string.
                     var maxLength = 120 // maximum number of characters to extract
