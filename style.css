@@ -508,6 +508,10 @@ table th {
     margin-bottom: 30px;
 }
 
+/* .dataTable tbody tr:hover {
+    cursor: pointer;
+}  */
+
 #see-more {
     margin-top: 20px;
 }

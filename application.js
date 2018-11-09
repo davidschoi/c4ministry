@@ -12,12 +12,12 @@ $(document).ready(function () {
         $("#menu").sticky();
 
         if ($('#banner').length) {
-            $(function() {
+            $(function () {
                 var windowH = $(window).height();
                 var bannerH = $('#banner').height();
                 if (windowH > bannerH) {
-                    $('#banner').css({'height': ($(window).height() - 68) + 'px'});
-                    $('#bannertext').css({'height': ($(window).height() - 68) + 'px'});
+                    $('#banner').css({ 'height': ($(window).height() - 68) + 'px' });
+                    $('#bannertext').css({ 'height': ($(window).height() - 68) + 'px' });
                 }
                 $(window).resize(function () {
                     var windowH = $(window).height();
@@ -26,12 +26,12 @@ $(document).ready(function () {
                     var newH = bannerH + differenceH;
                     var truecontentH = $('#bannertext').height();
                     if (windowH < truecontentH) {
-                        $('#banner').css({'height': (newH - 68) + 'px'});
-                        $('#bannertext').css({'height': (newH - 68) + 'px'});
+                        $('#banner').css({ 'height': (newH - 68) + 'px' });
+                        $('#bannertext').css({ 'height': (newH - 68) + 'px' });
                     }
                     if (windowH > truecontentH) {
-                        $('#banner').css({'height': (newH - 68) + 'px'});
-                        $('#bannertext').css({'height': (newH - 68) + 'px'});
+                        $('#banner').css({ 'height': (newH - 68) + 'px' });
+                        $('#bannertext').css({ 'height': (newH - 68) + 'px' });
                     }
                 })
             });
@@ -39,7 +39,7 @@ $(document).ready(function () {
 
         // Modal
         // -----------------------------
-        $('#modal [type="submit"]').on('click', function() {
+        $('#modal [type="submit"]').on('click', function () {
             $('#modal .close').click();
         })
     });
@@ -47,15 +47,15 @@ $(document).ready(function () {
 
 // Smooth Scrolling
 // -----------------------------
-$('a.page-scroll').click(function() {
-    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+$('a.page-scroll').click(function () {
+    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
         var target = $(this.hash);
-        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+        target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
         if (target.length) {
-        $('html,body').animate({
-            scrollTop: target.offset().top
-        }, 1000);
-        return false;
+            $('html,body').animate({
+                scrollTop: target.offset().top
+            }, 1000);
+            return false;
         }
     }
 });
@@ -74,7 +74,7 @@ if ($('#blog').length) {
                 var output = '';
                 $.each(response.items, function (k, item) {
                     var visibleSm;
-                    if(k < 3){
+                    if (k < 3) {
                         visibleSm = '';
                     } else {
                         visibleSm = ' visible-sm';
@@ -91,7 +91,7 @@ if ($('#blog').length) {
                     // output += '<div class="blog-element"><img class="img-responsive" src="' + src + '" width="360px" height="240px"></div></header>';
                     output += '<div class="blog-content"><h4><a target="_blank" href="' + item.link + '">' + item.title + '</a></h4>';
                     output += '<div class="post-meta"><span>By ' + item.author + '</span></div>';
-                    var yourString = item.description.replace(/<img[^>]*>/g,""); //replace with your string.
+                    var yourString = item.description.replace(/<img[^>]*>/g, ""); //replace with your string.
                     var maxLength = 120 // maximum number of characters to extract
                     //trim the string to the maximum length
                     var trimmedString = yourString.substr(0, maxLength);
@@ -113,9 +113,9 @@ if ($('#blog-archive').length) {
     function loadPosts() {
         var key = "api_key=USV2JcShmHgoYysSrXKL1OyzmouVcG3PxCtAJ0OT8rGkSkuGNR";
         var api = "https://api.tumblr.com/v2/blog/c4ministry-blog.tumblr.com/";
-        var retrieve_more = function(offset) {
-            $.getJSON(api + "posts/text?callback=?&filter=text&offset=" + offset + "&" + key,function(data) {
-                $.each(data.response.posts, function(i, item) {
+        var retrieve_more = function (offset) {
+            $.getJSON(api + "posts/text?callback=?&filter=text&offset=" + offset + "&" + key, function (data) {
+                $.each(data.response.posts, function (i, item) {
                     moment.tz.add('America/Los_Angeles|PST PDT|80 70|0101|1Lzm0 1zb0 Op0');
                     var date = new Date(item.date).toISOString();
                     var momentDate = moment(date).tz('America/Los_Angeles').format('MMMM Do, YYYY');
@@ -125,9 +125,9 @@ if ($('#blog-archive').length) {
                     $("#tumblr").append('<li>' +
                         '<h3><a href="' + postUrl + '" target="blank">' + title + '</a></h3>' +
                         '<p class="title">' + 'Pastor DP - ' + '<em>' + momentDate + '</em></p>' +
-                        '<p class="body">' + body.substring(0,500) + '...' + '</p>' +
+                        '<p class="body">' + body.substring(0, 500) + '...' + '</p>' +
                         '<p><a class="btn btn-info" href="' + postUrl + '" target="blank">' + 'Read More' + '</a></p>' +
-                    '</li>')
+                        '</li>')
                 });
             });
         };
@@ -138,26 +138,26 @@ if ($('#blog-archive').length) {
 // MixCloud
 // -----------------------------
 if ($('#sermon').length) {
-    $(document).ready(function() {
+    $(document).ready(function () {
         $.ajax({
             type: 'GET',
             url: encodeURI('https://api.mixcloud.com/c4ministry/cloudcasts/?limit=100'),
             dataType: 'jsonp',
-            success: function(res) {
+            success: function (res) {
                 var slugArray = [];
                 for (var i = 0; i < res.data.length; i++) {
                     slugArray.push(res.data[i].slug);
                 }
-                $('#mixcloud-embed').html('<iframe width="100%" height="120" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&light=1&feed=%2Fc4ministry%2F' + res.data[0].slug + '%2F" frameborder="0"></iframe>'); 
+                $('#mixcloud-embed').html('<iframe width="100%" height="120" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&light=1&feed=%2Fc4ministry%2F' + res.data[0].slug + '%2F" frameborder="0"></iframe>');
                 var dataTable = $('#mixcloud-table').DataTable();
 
-                $.each(slugArray, function(i, slug) {
+                $.each(slugArray, function (i, slug) {
                     $.ajax({
                         type: 'GET',
                         url: encodeURI('https://api.mixcloud.com/c4ministry/' + slug),
                         async: false,
                         dataType: 'jsonp',
-                        success: function(res) {
+                        success: function (res) {
                             var date = "Date: ";
                             var scripture = "Scripture: ";
                             var speaker = "Speaker: ";
@@ -174,6 +174,16 @@ if ($('#sermon').length) {
                 $('#mixcloud-table th')[0].click();
             }
         });
+
+        // $('#mixcloud-table').dataTable({
+        //     'fnDrawCallback': function (oSettings) {
+
+        //         $('#mixcloud-table tr').on('click', function () {
+        //             var sermonTitle = $(this).children('td:nth-child(2)').text().replace(/[^A-Za-z0-9\s]/g, "").replace(/\s{2,}/g, " ").replace(/\s+/g, '-').toLowerCase();
+        //             $('#mixcloud-embed iframe').attr('src', 'https://www.mixcloud.com/widget/iframe/?hide_cover=1&light=1&feed=%2Fc4ministry%2F' + sermonTitle + '%2F');
+        //         });
+        //     }
+        // });
     });
 }
 
@@ -182,7 +192,7 @@ if ($('#sermon').length) {
 if ($('.cleanup').length) {
     var cleanupDatesArray = $('.cleanup table tr td.cleanup-date');
     var cleanupStatusArray = $('.cleanup table tr td.cleanup-status')
-    $.each(cleanupDatesArray, function() {
+    $.each(cleanupDatesArray, function () {
         var dateText = $(this).text();
         if (new Date(dateText) < new Date()) {
             $(this).siblings('.cleanup-status').addClass('success').text('COMPLETED');
@@ -215,15 +225,17 @@ $.ajax({
 });
 
 $(function () {
-  $('[data-toggle="tooltip"]').tooltip();
+    $('[data-toggle="tooltip"]').tooltip();
 });
 
 // Google Analytics
 // -----------------------------
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+(function (i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+})(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
 ga('create', 'UA-53415604-2', 'auto');
 ga('send', 'pageview');
