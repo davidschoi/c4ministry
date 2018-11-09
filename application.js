@@ -148,7 +148,6 @@ if ($('#sermon').length) {
                 for (var i = 0; i < res.data.length; i++) {
                     slugArray.push(res.data[i].slug);
                 }
-                $('#mixcloud-embed').html('<iframe width="100%" height="120" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&light=1&feed=%2Fc4ministry%2F' + res.data[0].slug + '%2F" frameborder="0"></iframe>');
                 var dataTable = $('#mixcloud-table').DataTable();
 
                 $.each(slugArray, function (i, slug) {
@@ -172,20 +171,16 @@ if ($('#sermon').length) {
                     });
                 });
                 $('#mixcloud-table th')[0].click();
+                $('#mixcloud-embed').html('<iframe width="100%" height="120" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&light=1&feed=%2Fc4ministry%2F' + res.data[0].slug + '%2F" frameborder="0"></iframe>');
             }
         });
-
-        // $('#mixcloud-table').dataTable({
-        //     'fnDrawCallback': function (oSettings) {
-
-        //         $('#mixcloud-table tr').on('click', function () {
-        //             var sermonTitle = $(this).children('td:nth-child(2)').text().replace(/[^A-Za-z0-9\s]/g, "").replace(/\s{2,}/g, " ").replace(/\s+/g, '-').toLowerCase();
-        //             $('#mixcloud-embed iframe').attr('src', 'https://www.mixcloud.com/widget/iframe/?hide_cover=1&light=1&feed=%2Fc4ministry%2F' + sermonTitle + '%2F');
-        //         });
-        //     }
-        // });
     });
 }
+
+$(document).on('click', '#mixcloud-table tr', function () {
+    var sermonTitle = $(this).children('td:nth-child(2)').text().replace(/[^A-Za-z0-9\s]/g, "").replace(/\s{2,}/g, " ").replace(/\s+/g, '-').toLowerCase();
+    $('#mixcloud-embed iframe').attr('src', 'https://www.mixcloud.com/widget/iframe/?hide_cover=1&light=1&feed=%2Fc4ministry%2F' + sermonTitle + '%2F');
+})
 
 // Cleanup Table
 // -----------------------------

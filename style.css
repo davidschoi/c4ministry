@@ -508,9 +508,14 @@ table th {
     margin-bottom: 30px;
 }
 
-/* .dataTable tbody tr:hover {
+.dataTable tbody tr {
     cursor: pointer;
-}  */
+}
+
+.dataTable tbody tr:hover td:nth-child(2) {
+    color: #ae1016;
+    font-weight: bold;
+}
 
 #see-more {
     margin-top: 20px;
