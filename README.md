@@ -1,5 +1,3 @@
-[![BrowserStack Status](https://www.browserstack.com/automate/badge.svg?badge_key=<badge_key>)](https://www.browserstack.com/automate/public-build/<badge_key>)
-
 # C4 Ministry
 [C4 Ministry](https://www.c4ministry.com/)
 

@@ -12,7 +12,7 @@ You will then retrieve your mobile device during the offering prayer, which will
 If you prefer you can use QuickTime Player to trim the sermon.
 
 ## Upload Sermon to MixCloud
-1. Login to [MixCloud](https://www.mixcloud.com/c4ministry/)
+1. Login to [MixCloud](https://mixcloud.com/c4ministry/)
 
    *Username*: c4ministry  
    *Password*: Obtain MixCloud credentials from [David Choi](https://github.com/davidgumzchoi)
@@ -21,16 +21,14 @@ If you prefer you can use QuickTime Player to trim the sermon.
 
    *Title*: SERMON_TITLE  
    *Tags*: #sermon #psalms  
-   *Description*: Date: 2018-05-13 | Scripture: Psalms 34 | Speaker: Pastor Daniel Park
+   *Description*: Date: YYYY-DD-MM | Scripture: Psalms 34 | Speaker: Pastor Daniel Park
    
-   Description must follow specific format so that the information could be parsed properly on [c4ministry.com](https://www.c4ministry.com)
+   Description must follow specific format of punctuation and spelling so that the information could be parsed properly via [c4ministry.com](https://c4ministry.com)
 
 ## Upload Facebook post
 
 1. Login to our [C4 Ministry Facebook Page](https://www.facebook.com/california.christ.community.church/)
 
-2. Upload Sermon post
+2. Upload Sermon post (Request admin access from Staff)
 
    Post should include brief summary and URL to Mixcloud upload.
-
-   
