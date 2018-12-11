@@ -21,14 +21,17 @@ If you prefer you can use QuickTime Player to trim the sermon.
 
    *Title*: SERMON_TITLE  
    *Tags*: #sermon #psalms  
-   *Description*: Date: YYYY-DD-MM | Scripture: Psalms 34 | Speaker: Pastor Daniel Park
+   *Description*: Date: 2019-01-01 | Scripture: Psalms 60 | Speaker: Pastor Daniel Park
    
-   Description must follow specific format of punctuation and spelling so that the information could be parsed properly via [c4ministry.com](https://c4ministry.com)
+   Description must follow specific format of punctuation and spelling so that the information could be parsed properly via [c4ministry.com][c4ministry]
 
 ## Upload Facebook post
 
-1. Login to our [C4 Ministry Facebook Page](https://www.facebook.com/california.christ.community.church/)
+1. Login to our [C4 Ministry Facebook Page][facebook]
 
 2. Upload Sermon post (Request admin access from Staff)
 
    Post should include brief summary and URL to Mixcloud upload.
+
+ [facebook]: https://www.facebook.com/california.christ.community.church/ "facebook"
+ [c4ministry]: https://c4ministry.com/
