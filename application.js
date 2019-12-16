@@ -153,7 +153,7 @@ if ($('#sermon').length) {
                 $.each(slugArray, function (i, slug) {
                     $.ajax({
                         type: 'GET',
-                        url: encodeURI('https://api.mixcloud.com/c4ministry/' + slug),
+                        url: encodeURI('https://api.mixcloud.com/c4ministry/' + slug + '/'),
                         async: false,
                         dataType: 'jsonp',
                         success: function (res) {
