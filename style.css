@@ -591,3 +591,29 @@ table th {
         padding-bottom: 56.25%;
     }
 }
+
+/*------------------------------------------/
+/-----------------Covid-19 Alert------------/
+/------------------------------------------*/
+#covidAlert {
+    background: #950000;
+    text-align: center;
+}
+
+.covid-alert {
+    color: #fff;
+    margin: 0;
+    padding: 16px 0;
+}
+
+a.covid-pdf-link {
+    color: #fff;
+    text-decoration: underline;
+}
+
+a.covid-pdf-link:active,
+a.covid-pdf-link:focus,
+a.covid-pdf-link:hover,
+a.covid-pdf-link:visited  {
+    color: #fff;
+}
