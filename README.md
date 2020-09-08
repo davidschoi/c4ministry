@@ -5,16 +5,16 @@
 There is currently no documentation, no style guide, no best practices, but there is a starting [CHANGELOG](https://github.com/davidgumzchoi/c4ministry/blob/master/CHANGELOG.md) and directions for [CONTRIBUTING](https://github.com/davidgumzchoi/c4ministry/blob/master/CONTRIBUTING.md).
 
 ## Webmaster Domain
-* [GitHub](c4-github)
-* [Facebook](c4-facebook)
-* [Mixcloud Sermons](c4-mixcloud)
-* [Google Calendar](c4-calendar)
-* [Medium Blog](c4-medium)
-* [C4 Mailing List](c4-google-group)
-* [C4 Mailing List Members Only](c4-google-group-members)
-* [Venmo](c4-venmo)
-* [Google Domains](c4-google-domains)
-* [Google Analytics](c4-google-analytics)
+* [GitHub][c4-github]
+* [Facebook][c4-facebook]
+* [Mixcloud Sermons][c4-mixcloud]
+* [Google Calendar][c4-calendar]
+* [Medium Blog][c4-medium]
+* [C4 Mailing List][c4-google-group]
+* [C4 Mailing List Members Only][c4-google-group-members]
+* [Venmo][c4-venmo]
+* [Google Domains][c4-google-domains]
+* [Google Analytics][c4-google-analytics]
 * Contact Form is tied to a Google Spreadsheet Form that the staff is subscribed to upon updates.
 
 ## Sermon Upload
