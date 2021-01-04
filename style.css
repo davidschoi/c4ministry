@@ -408,8 +408,11 @@ section {
 /-----------------Blog----------------------/
 /------------------------------------------*/
 .staff-row {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 0px 12px;
+    margin-left: -15px;
+    margin-right: -15px; 
 }
 
 .staff-row .thumbnail {
@@ -442,6 +445,7 @@ section {
 .staff .pastor-row .thumbnail {
     display: flex;
     align-items: flex-start;
+    flex-wrap: wrap;
 }
 
 .staff .pastor-row .caption h3 {
