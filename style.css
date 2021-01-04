@@ -445,11 +445,17 @@ section {
 .staff .pastor-row .thumbnail {
     display: flex;
     align-items: flex-start;
-    flex-wrap: wrap;
+    
 }
 
 .staff .pastor-row .caption h3 {
     min-height: auto;
+}
+
+@media (max-width: 767px) {
+    .staff .pastor-row .thumbnail {
+        flex-wrap: wrap;
+    }
 }
 
 /*------------------------------------------/
